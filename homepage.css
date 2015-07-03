@@ -1,0 +1,32 @@
+body {
+	background-color: white;
+}
+
+div {
+	/*border: 1px solid;*/
+}
+
+
+#wrapper {
+	margin: auto;
+	width: 1000px;
+}
+
+#navBar {
+	height: 25px;
+}
+
+div.nav {
+	text-align: center;
+	width: 200px;
+	float: left;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+p {
+	margin: 0px 25px;
+}

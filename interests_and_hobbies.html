@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<head>
+
+<title> Lance Tadiosa's Homepage </title>
+
+<link rel="stylesheet" type="text/css" href="homepage.css">
+
+<style>
+#drawings{
+	height: 300px;
+	width: 300px;
+}
+
+#interest_img {
+	height: 200px;
+	width: 200px;
+	position: absolute;
+	border-style: solid;
+	border-color: grey;
+}
+
+.interests {
+	width: 200px; 
+	float: left;
+	margin-right: 50px;
+}
+
+</style>
+
+
+</head>
+
+<body>
+<div id="wrapper">
+	<div align="center">
+		<h1> Lance Tadiosa </h1>
+		<p>Undergraduate in Computer Science and Engineering</p>
+		<p>
+			<a href="http://www.ucr.edu/">University of California Riverside</a>
+			, 
+			<a href="http://www.engr.ucr.edu/">Bourns College of Engineering</a> 
+		</p>
+		<img height="20px" src="./contacts.png">
+	</div>
+	<hr>
+	<div id="navBar">
+		<div class="nav">
+			<a href="homepage.html">Home</a>	
+		</div>
+		<div class="nav">
+			<a href="projects.html">Projects</a>	
+		</div>
+		<div class="nav">
+			<a href="interests_and_hobbies.html">Interest & Hobbies</a>	
+		</div>
+		<div class="nav">
+			<a href="Resume.pdf"> Resume </a>	
+		</div>
+		<div class="nav">
+			<a href="http://www.freerice.com"> Random </a>	
+		</div>
+	</div>
+	<hr>	
+	
+	<h2>Interests & Hobbies</h2>
+
+	<div id="wrapper">
+	<div style="height: 300px; width: 1000px">
+		<div id="arts" class="interests">
+			<h3 align="center"> Arts </h3>
+			<div id="arts_img">
+				<img class="interest_img" src="./draw1.jpg"/>
+				<img class="interest_img" src="./draw2.jpg"/>
+				<img class="interest_img" src="./Joker1.png"/>
+				<img class="interest_img" src="./Joker2.png"/>
+				<img class="interest_img" src="./Joker3.png"/>
+				<img class="interest_img" src="./Joker4.png"/>
+				
+			</div>
+			<p class="interest_description">I like to draw occassionaly. I practice drawing often and I hope to be able to be good enough to be able to easily bring out images from head. </p>
+		</div>
+
+		<div id="crafts" class="interests">
+			<h3 align="center"> Crafts </h3>
+			<div id="crafts_img">
+				<img class="interest_img" src="./knit1.jpg"/>
+				<img class="interest_img" src="./knit2.jpg"/>
+				<img class="interest_img" src="./knit3.jpg"/>
+			</div>
+			<p class="interest_description">At time, I like to be able to be creative in other ways other than drawing. </p>
+		</div>
+		
+		<div id="Volunteer" class="interests">
+			<h3 align="center"> Volunteer </h3>
+			<div id="volunteer_img">
+				<img class="interest_img" src="./volunteer1.jpg"/>
+				<img class="interest_img" src="./volunteer2.jpg"/>
+				<img class="interest_img" src="./volunteer3.jpg"/>
+			</div>
+			<p class="interest_description">I enjoy volunteering. I think it provides great way to meet new people and practice leadership.</p>
+		</div>
+		
+
+	</div>
+
+	<div id="expanded" style="background-color: black;display: inline-block; width: 100%;">
+		<div id="images" style="width: 50%; float: left">
+		</div>
+		<div id="description" style="width:50%; float: right">
+		</div>
+	</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+	
+	var expand = false;
+	
+	$(".interest_description").hide();
+	
+	$(".interests").mouseenter(function() {
+		$("#images").empty();
+		$("#description").empty();
+		$("#images").css("background-color","black");
+		$(this).children("div").children().clone().css("position","relative").appendTo("#images");
+		$("#images").children().css("float","left").css("border-style","none").css("margin","10px").fadeTo(0,1);
+		$(this).children(":header").clone().css("color","white").css("font-size","50px").appendTo("#description");
+		$(this).children(".interest_description").clone().css("color","white").css("font-size","15px").appendTo("#description");
+		
+	});
+	$(".interests").click(function() {
+		$("#images").empty();
+		$("#description").empty();
+	});
+
+	$(function(){
+		$("#arts_img > img:gt(0)").hide();
+		setInterval(function () {
+			$("#arts_img :first")
+			.fadeOut(1000)
+			.next()
+			.fadeIn(1000)
+			.end()
+			.appendTo("#arts_img");
+		}, 2700);
+	});
+	$(function(){
+		$("#crafts_img > img:gt(0)").hide();
+		setInterval(function () {
+			$("#crafts_img :first")
+			.fadeOut(1000)
+			.next()
+			.fadeIn(1000)
+			.end()
+			.appendTo("#crafts_img");
+		}, 2800);
+	});
+	$(function(){
+		$("#volunteer_img > img:gt(0)").hide();
+		setInterval(function () {
+			$("#volunteer_img :first")
+			.fadeOut(1000)
+			.next()
+			.fadeIn(1000)
+			.end()
+			.appendTo("#volunteer_img");
+		}, 3000);
+	});
+
+ </script>
+
+</body>
